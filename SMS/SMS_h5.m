@@ -6,7 +6,7 @@
 如temp.h5就为SMS生成网格后出现的h5文件
 %}
 clc;clear;
-file_name = './mesh/cell - 插值数据09142.h5';
+file_name = './mesh/cell - scatterdata09142.h5';
 % h5disp(file_name)
 info = h5info(file_name);
 % 一般而言，地形数据位于一下两个地方，如不对，可通过h5disp命令查看文件数据结构，找出数据位置
