@@ -1,0 +1,19 @@
+4		value of 'OMPN', Number of Cpu used for OpenMP
+9.0		value of 'h000'  可冲厚度！
+9600	 	value of 'Tmax' (s)
+0.9		value of 'Crn' the Courant number
+1               value of 'ID_STC' (1:张瑞瑾+韩其为；2 郭俊克公式)
+0.063	1.44    value of 'cK and cm' 韩其为：cK=0.12,cm=0.92; 张瑞瑾：cK=0.063, cm=1.44
+1.0		value 'cGuo'for the expression modified by Guojunke
+9999999		value of 'IDrough' =2 for mobilebed roughness varying with time; otherwise constant with time
+0.011		value of the averaged roughness value.
+0		value of 'mobilebed' =1 for mobile bed, =0 for fixed bed no erosion/deposition
+2	        value of 'IDopenbc'--是否设置开边界（1：否；2：设置，并给出开边界过程）
+0.4		value of 'sediment porosity'--泥沙空隙率
+0.00016  	--泥沙粒径(m)（注意！！从小到大）
+0.00016	  0.00016  级配曲线，dii
+400		value of 'timesd84, note 太平口的d84约等于0.0004 m', indicatin how large the active layr thickness
+16		value of '\alpha'
+1920             --文件输出时间间隔
+1250	        开边界和内在Cross Section的node的最多个数！！！可以通过Cell.bc和CSpoint.bc文件里面去数一数从而知道
+0	0	0	0.2486  水位流量关系abcd的值：a*Q^3+b*Q^2+c*Q+d

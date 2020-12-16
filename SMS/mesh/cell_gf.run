@@ -1,0 +1,3 @@
+GEOMETRY_INP cell.geo
+GEOMETRY_FPL cell.ot1
+GEOMETRY_BIN cell.bin
