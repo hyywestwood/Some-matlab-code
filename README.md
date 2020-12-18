@@ -46,7 +46,7 @@
 该文件夹中存放一些其他杂七杂八的代码文件
 
 ~~~matlab
-```
+
 % 生成文件夹和删除文件夹
 if exist('.\simulation_results','dir') == 0
     mkdir('.\simulation_results');
@@ -71,5 +71,4 @@ dt = datenum(time_end - time_origin)*86400;
 movefile('origin_file_name', 'new_file_name');
 copyfile('origin_file_name', 'new_file_name');
 
-```
 ~~~
