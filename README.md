@@ -46,7 +46,7 @@
 该文件夹中存放一些其他杂七杂八的代码文件
 
 ~~~matlab
-```matlab 
+```
 % 生成文件夹和删除文件夹
 if exist('.\simulation_results','dir') == 0
     mkdir('.\simulation_results');
