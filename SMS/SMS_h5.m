@@ -11,7 +11,11 @@ file_name = './mesh/cell - scatterdata09142.h5';
 info = h5info(file_name);
 % 一般而言，地形数据位于一下两个地方，如不对，可通过h5disp命令查看文件数据结构，找出数据位置
 data_loc = info.Groups(1).Groups.Groups;
-elevation = h5read(file_name, [data_loc(1).Name '/elevation/Values']);
+try
+    elevation = h5read(file_name, [data_loc(1).Name '/elevation/Values']);
+catch
+    elevation = h5read(file_name, [data_loc(1).Name '/Z/Values']);
+end
 nodes = h5read(file_name, [data_loc(4).Name '/NodeLocs']);
 data = [nodes', elevation]; % data数组的第1,2,4列分别对应了数据点的x,y,z
 

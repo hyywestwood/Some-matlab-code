@@ -2,7 +2,7 @@
 clc;clear;
 file_path = '.';
 % 读取cell.geo文件
-% bc = read_bc(file_path);
+bc = read_bc(file_path);
 
 % 读取cell.bc文件
 % cell = read_cell(file_path);
@@ -15,7 +15,7 @@ file_path = '.';
 % 待续。。。
 
 % 程序中Topr的MATLAB实现
-[Cell, Face, Node] = run_topr(file_path);
+% [Cell, Face, Node] = run_topr(file_path);
 
 
 %% 一些函数
@@ -78,7 +78,7 @@ bc_num = 0;
 while ~feof(fid)
     tline=fgetl(fid);
     if contains(tline, 'GCL')
-        if contains(tline(8:13), '      ')
+        if contains(tline(4:9), '      ')
             S = regexp(tline, '\s+', 'split');
             for i = 2:length(S)
                 eval(['BC.bc' num2str(bc_num) '= [BC.bc' num2str(bc_num) ', str2double(S{i})];']);
