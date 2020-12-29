@@ -66,10 +66,11 @@ fid=fopen([str '\RESULTS' num2str(i,'%05d') '.DAT'],'r','n','utf-8');
 flag = 1;
 while ~feof(fid)
     tline=fgetl(fid);
-    if contains(tline, 'VarIables=')
+    if contains(tline, 'VarIables=','IgnoreCase',true)
         c = regexp(tline,'".*"','match');
         c = strrep(c{1,1},' ','');
         c = strrep(c,'(','');
+        c = strrep(c,'/','');
         c = strrep(c,')','');
         c = strrep(c,'""','"');
         cell.varibles_name = split(strtrim(c(2:end-1)),'"');
