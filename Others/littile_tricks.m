@@ -27,7 +27,7 @@ copyfile('origin_file_name', 'new_file_name');
 %% 求解析解
 syms x y
 
-x1 = 1400; y1 = 1400; %解析解中的参数
+x1 = 1400; y1 =  1400; %解析解中的参数
 x2 = 2400; y2 = 2400;
 c1 = 10; c2 = 6.5;
 u = 0.5; v = 0.5;
