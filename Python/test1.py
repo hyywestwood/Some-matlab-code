@@ -15,7 +15,8 @@ import numpy as np
 tp.session.connect(port=7600)   # 与tecplot程序连接
 
 # 读取数据并创建一个新frame
-file_data = tp.data.load_tecplot(r'D:\辽河\支流对比\1110\与实测对比验证\第六次模拟\算例\渤海1229-50N-长周期\REsults\RESULTS01050.DAT')
+# file_data = tp.data.load_tecplot(r'D:\辽河\支流对比\1110\与实测对比验证\第六次模拟\算例\渤海1229-50N-长周期\REsults\RESULTS01050.DAT')
+file_data = tp.data.load_tecplot(r'RESULTS01050.DAT')
 frame = tp.active_frame()
 frame.position = (0.2, 0.5) # frame的位置
 frame.width = 8     # frame的长
