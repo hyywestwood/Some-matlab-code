@@ -80,3 +80,9 @@ legend.number_font.bold = False
 
 # 保存图片
 tp.export.save_png('test.png', 600, supersample=3)
+
+'''
+这个似乎并没有什么用...
+不过它能使模拟-作图的流程更加连贯，如可以通过修改参数文件控制我们模型的输出结果
+并在计算完成后直接输出图像，使流程更加连贯
+'''
