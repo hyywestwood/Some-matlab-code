@@ -1,4 +1,4 @@
-# Some MATLAB Code
+# Some Code
 记录一些平常用到的MATLAB代码
 
 # CFD
@@ -89,3 +89,8 @@ c_exact = double(subs(c,{x,y},{X,Y}));  % 将XY对应代入xy，求得对应点�
 
 ~~~
 
+# Python
+
+该部分记录用Python写的一些代码片段
+
+[使用Pytecplot调用tecplot进行绘图](/Python/test1.py)
