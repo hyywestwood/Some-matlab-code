@@ -60,7 +60,7 @@ yaxis.title.offset = 8
 yaxis.tick_labels.font.typeface = 'Times'
 yaxis.tick_labels.font.size = 3.5
 
-# 图片legend显示成熟
+# 图片legend显层数
 levels = frame.plot().contour(0).levels
 levels.reset_levels(np.linspace(0,3,11))
 

@@ -1,5 +1,5 @@
 # Some Code
-记录一些平常用到的MATLAB代码
+记录一些平常用到的代码
 
 # CFD
 
