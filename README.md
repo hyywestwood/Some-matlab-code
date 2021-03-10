@@ -45,6 +45,8 @@
 
 该部分记录一些平常使用的一些小技巧，以及杂七杂八的代码文件
 
+[使用MATLAB生成视频或GIF](/Others/fenzikuosan.m)
+
 ~~~matlab
 
 %% 生成文件夹和删除文件夹
