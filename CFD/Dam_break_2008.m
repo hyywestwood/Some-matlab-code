@@ -6,23 +6,23 @@
 clc;clear;
 
 % 计算场设定
-X = linspace(0,25,100000);
-dx = 25/length(X);
+X = linspace(0, 1000, 10000);
+dx = 1000/(length(X)-1);
 h = zeros(1, length(X));
 u = zeros(1, length(X));
-dt = 0.00001;
+dt = 0.01;
 
 
 % 初始条件
-h(X < 10) = 10;
-h(X >= 10) = 1;
+h(X < 500) = 1;
+h(X >= 500) = 0.5;
 hu = h.*u;
 time=0;
 k =1;
 
 tic
 figure('position',[100,100,800,450]);
-while time <= 1
+while time <= 64
 
 %     求解对流通量
     h_force = get_flux(h, u, X, dt, dx);
@@ -34,8 +34,8 @@ while time <= 1
 for i = 2:length(X)-1
 %     h_new(i) = h(i) - dt*(h_force(i) - h_force(i-1))/dx;
 %     hu_new(i) = hu(i) - dt*(hu_force(i) - hu_force(i-1))/dx + dt*source(i);
-    h_new(i) = h(i) - dt*(h_force(i) - h_force(i-1))/dx - dt*h(i)*u(i)/X(i);
-    hu_new(i) = hu(i) - dt*(hu_force(i) - hu_force(i-1))/dx + dt*source(i) - dt*hu(i)*u(i)/X(i);
+    h_new(i) = h(i) - dt*(h_force(i) - h_force(i-1))/dx;
+    hu_new(i) = hu(i) - dt*(hu_force(i) - hu_force(i-1))/dx + dt*source(i);
 end
     h_new(1) = h_new(2);
     hu_new(1) = hu_new(2);
@@ -49,20 +49,20 @@ end
 %     h(h<0)=0;u(u<0)=0;
 %     u = zeros(1, length(X)) + 10;
     
-%     plot(X, h, 'linewidth', 2)
-%     xlim([4, 16])
-%     ylim([0 12])
-%     xlabel('X(m)')
-%     ylabel('h(m)')
-%     title(['time: ', num2str(time, '%.4f'),'s' ])
-%     grid on
-% %     pause(0.01)
-%     frame=getframe(gcf);
-%     clf; 
+    plot(X, h, 'linewidth', 2)
+    xlim([200, 800])
+    ylim([0 1.2])
+    xlabel('X(m)')
+    ylabel('h(m)')
+    title(['time: ', num2str(time, '%.4f'),'s' ])
+    grid on
+%     pause(0.01)
+    frame=getframe(gcf);
+    clf; 
    
     time = time + dt;
     
-    if abs(time - 0.1*k)<dt
+    if abs(time - 16*k)<dt
         write_file(h, u, X, time, dx);
         k = k+1;
         fprintf(['time: ' num2str(time, '%.2f') 's finished... \r'])
